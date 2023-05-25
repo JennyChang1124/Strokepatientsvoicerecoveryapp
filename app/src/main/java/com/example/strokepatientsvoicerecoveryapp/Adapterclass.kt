@@ -3,6 +3,8 @@ package com.example.strokepatientsvoicerecoveryapp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.MenuView.ItemView
@@ -10,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Adapterclass(private val dataList: ArrayList<Dataclass>):RecyclerView.Adapter<Adapterclass.ViewHolerClass>() {
 
-
+    var onItemClick:((Dataclass) -> Unit)?=null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolerClass {
         val itemView=LayoutInflater.from(parent.context).inflate(R.layout.item_layout,parent,false)
@@ -22,6 +24,9 @@ class Adapterclass(private val dataList: ArrayList<Dataclass>):RecyclerView.Adap
         val currentItem=dataList[position]
         holder.rvImage.setImageResource(currentItem.dataImage)
         holder.rvTitle.text=currentItem.dataTitle
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(currentItem)
+        }
     }//綁定資料
 
     override fun getItemCount(): Int {

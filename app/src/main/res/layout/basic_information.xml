@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
+    style="@style/Theme.MaterialComponents.DayNight.NoActionBar"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:padding="20dp"
+       android:gravity="center">
+
+      <ImageView
+          android:layout_width="80dp"
+          android:layout_height="80dp"
+          android:layout_marginStart="310dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/bgremove_book" />
+
+   </LinearLayout>
 
    <TextView
        android:id="@+id/baseinfo"
        android:layout_width="wrap_content"
-       android:text="用戶基本資料"
-       android:textStyle="bold"
-       android:textSize="45dp"
-       android:textColor="#000"
+       android:layout_height="wrap_content"
        android:layout_margin="50dp"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
+       android:layout_marginTop="100dp"
+       android:text="用戶基本資料"
+       android:textColor="#408080"
+       android:textSize="45dp"
+       android:textStyle="bold"
        app:layout_constraintEnd_toEndOf="parent"
-       android:layout_height="wrap_content"/>
+       app:layout_constraintHorizontal_bias="0.113"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
 
    <com.google.android.material.textfield.TextInputLayout
        android:id="@+id/textUsername"
        android:layout_width="match_parent"
-      android:layout_margin="30dp"
+       android:layout_margin="30dp"
        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
        app:layout_constraintTop_toBottomOf="@+id/baseinfo"
        app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +54,10 @@
           android:id="@+id/editAge"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="#408080"
           android:hint="名字" />
 
-</com.google.android.material.textfield.TextInputLayout>
+   </com.google.android.material.textfield.TextInputLayout>
 
    <com.google.android.material.textfield.TextInputLayout
        android:id="@+id/textAge"
@@ -53,6 +74,7 @@
           android:id="@+id/editphone"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="#408080"
           android:hint="出生 yyyy/mm/dd" />
    </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,6 +96,7 @@
           android:id="@+id/editmember"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="#408080"
           android:hint="地址" />
    </com.google.android.material.textfield.TextInputLayout>
    <com.google.android.material.textfield.TextInputLayout
@@ -92,6 +115,7 @@
           android:id="@+id/editmembername"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="#408080"
           android:hint="家庭成員1" />
 
    </com.google.android.material.textfield.TextInputLayout>
@@ -113,6 +137,7 @@
           android:id="@+id/editmem"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="#408080"
           android:hint="家人姓名1" />
 
       <TextView
@@ -122,7 +147,7 @@
           android:textStyle="bold"
           android:textSize="20sp"
           android:layout_marginTop="10dp"
-          android:textColor="#000"
+          android:textColor="#408080"
           app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +165,7 @@
           android:text="難度*"
           android:textStyle="bold"
           android:textSize="20sp"
-          android:textColor="#000"
+          android:textColor="#408080"
           android:layout_marginTop="10dp"
           app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintStart_toStartOf="parent"
@@ -157,8 +182,8 @@
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="(根據你的種類，建議難度)"
-          android:textColor="#555555"
+          android:text="根據你的種類，建議難度"
+          android:textColor="#408080"
           android:textSize="20sp"
           android:textStyle="bold"
           android:layout_marginTop="5dp"
@@ -170,9 +195,11 @@
 
       <Button
           android:id="@+id/send"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_margin="70dp"
+          android:layout_width="150dp"
+          android:layout_height="60dp"
+          android:layout_gravity="center"
+          android:layout_margin="50dp"
+          android:background="@drawable/button_background"
           android:text="送出"
           android:textSize="25dp"
           android:textStyle="bold"
