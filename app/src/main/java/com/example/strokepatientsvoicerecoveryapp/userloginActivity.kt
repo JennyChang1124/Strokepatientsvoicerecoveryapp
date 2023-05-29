@@ -58,11 +58,13 @@ class userloginActivity : AppCompatActivity() {
                     if(passwordFromDB == password){
                         edusername.setError(null);
                         Toast.makeText(this@userloginActivity, "登入成功", Toast.LENGTH_LONG).show()
+
                         // 用intent 傳username到設定介面
                         val usernameFromDB = snapshot.child(username).child("username").getValue(String::class.java)
                         val intent = Intent(this@userloginActivity, BasicinformationActivity::class.java)
                         intent.putExtra("username", usernameFromDB)
                         startActivity(intent)
+
                     }else{
                         Toast.makeText(this@userloginActivity, "密碼輸入錯誤", Toast.LENGTH_LONG).show()
                     }
